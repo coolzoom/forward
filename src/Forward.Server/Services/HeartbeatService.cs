@@ -179,7 +179,7 @@ namespace Forward.Server.Services
             try
             {
                 remoteEndPoint = tcpClient.Client.RemoteEndPoint.ToString();
-                var forwardId = cmd.Split(":").Last();
+                var forwardId = cmd.Split(':').Last();
                 var cacheKey = $"/CancellationToken/{forwardId}";
                 var requesInfo = _cache.Get<ForwardRequesInfo>(cacheKey);
                 if (requesInfo == null)
@@ -261,8 +261,8 @@ namespace Forward.Server.Services
         private bool CheckHearbeatConnectionMessage(string cmd, out string clientId)
         {
             clientId = string.Empty;
-            var message = cmd.Split(":").Last();
-            var args = message.Split(",");
+            var message = cmd.Split(':').Last();
+            var args = message.Split(',');
 
             if (args.Length != 4)
             {

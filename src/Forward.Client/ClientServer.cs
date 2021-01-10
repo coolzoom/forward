@@ -79,7 +79,7 @@ namespace Forward.Client
         /// <returns></returns>
         private ConnectionOptions GetConnectionOptions(string parameter)
         {
-            var args = parameter.Split(",");
+            var args = parameter.Split(',');
             if (args.Length != 2)
             {
                 throw new Exception("服务端返回的请求连接参数错误");

@@ -110,7 +110,7 @@ namespace Forward.Client.Services
             while (!token.IsCancellationRequested)
             {
                 await Task.Delay(1000 * 10);
-                await stream.WriteAsync(beatBuff);
+                await stream.WriteAsync(beatBuff, 0, beatBuff.Length);
             }
         }
 
@@ -137,7 +137,7 @@ namespace Forward.Client.Services
                 if (cmd.StartsWith("connection") && RequestConnectionEvent != null)
                 {
                     _logger.LogInformation("收到访问请求:{0}", cmd);
-                    var parameter = cmd.Split(":").LastOrDefault();
+                    var parameter = cmd.Split(':').LastOrDefault();
                     _ = RequestConnectionEvent(parameter);
                 }
             }
