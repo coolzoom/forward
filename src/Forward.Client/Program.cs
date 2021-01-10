@@ -16,7 +16,7 @@ using NLog.Extensions.Logging;
 
 namespace Forward.Client
 {
-    class Program
+    public class Program
     {
 
         public static Dictionary<string, string> dictULR = new Dictionary<string, string> {
@@ -66,6 +66,11 @@ namespace Forward.Client
 
         static async Task Main(string[] args)
         {
+            await runclient();
+        }
+
+        public static async Task runclient()
+        {
             foreach (string u in dictULR.Values)
             {
 
@@ -94,7 +99,6 @@ namespace Forward.Client
                 LogManager.Shutdown();
             }
         }
-
         /// <summary>
         /// 程序配置
         /// </summary>

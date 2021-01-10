@@ -12,9 +12,13 @@ using NLog.Extensions.Logging;
 
 namespace Forward.Server
 {
-    class Program
+    public class Program
     {
         static async Task Main(string[] args)
+        {
+            await runserver();
+        }
+        public static async Task runserver()
         {
             var _logger = LogManager.GetCurrentClassLogger();
             _logger.Warn("端口转发程序启动");
@@ -34,7 +38,6 @@ namespace Forward.Server
                 LogManager.Shutdown();
             }
         }
-
         private static ServiceProvider Configure()
         {
             var services = new ServiceCollection();
