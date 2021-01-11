@@ -129,7 +129,7 @@ namespace Forward.Client
         {
             var builder = new ConfigurationBuilder()
                 .SetBasePath(Path.Combine(AppContext.BaseDirectory))
-                .AddJsonFile("appsettings.json", false);
+                .AddJsonFile("appclient.json", false);
 
             return builder.Build();
         }

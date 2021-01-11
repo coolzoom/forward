@@ -65,7 +65,7 @@ namespace Forward.Server
         {
             var builder = new ConfigurationBuilder()
                 .SetBasePath(Path.Combine(AppContext.BaseDirectory))
-                .AddJsonFile("appsettings.json", false);
+                .AddJsonFile("appserver.json", false);
 
             return builder.Build();
         }
